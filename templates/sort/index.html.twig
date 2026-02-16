@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+	<div class="example-wrapper">
+		<h1>
+			tout les Sorts
+		</h1>
+
+		<div class="grid row row-cols-4 position-static">
+
+			{% for sort in sorts %}
+				<div class="card mx-auto my-2"  style="width: 18rem;">
+					<a href="{{ path('sort.show',{ id:sort.id})}}">
+						<div class="card-header">
+							{{sort.nom}} | id : {{sort.id}}
+						</div>
+					</a>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							cout : {{sort.cout}}
+						</li>
+						<li class="list-group-item">
+							{{sort.description}}
+						</li>
+					</ul>
+				</div>
+			{% endfor %}
+		</div> {# fin grid  #}
+
+ 
+{% endblock %}

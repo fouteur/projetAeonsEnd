@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1> {{relique.nom}} </h1>
+
+    <h3>
+        cout :  {{relique.cout}}
+    </h3> 
+
+    <h3> description : </h3> 
+    <p>
+        {{relique.description | nl2br }}
+    </p> 
+</div>
+{% endblock %} 
+ 

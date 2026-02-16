@@ -1,0 +1,168 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+<style>
+    .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+ 
+</style>
+<div class="example-wrapper">
+
+
+    
+<form method="post" id="marcheForm">
+	
+	</div> 
+	    <div class="row row-cols-7">
+		<div class="col"><button type="submit"  formaction="{{ path('marche0') }}" formmethod="get" class="btn btn-outline-primary">aléatoire
+				<div class="row row-cols-3"> 
+					<div class="col text-muted"> A </div> 
+					<div class="col text-muted"> A </div>	
+					<div class="col text-muted"> A </div> 
+
+					<div class="col text-primary"> A </div>
+					<div class="col text-primary"> A </div>
+					<div class="col text-warning"> A </div>
+
+					<div class="col text-warning"> A </div>
+					<div class="col text-warning"> A </div>
+					<div class="col text-warning"> A </div>
+				</div>			
+			</button></div>
+
+		{# marche 1 #}
+			<div class="col"><button type="submit"  formaction="{{ path('marche1') }}" formmethod="get" class="btn btn-outline-primary">marché 1
+				<div class="row row-cols-3"> 
+					<div class="col text-muted"> <3 </div> 
+					<div class="col text-muted"> 4< </div>	
+					<div class="col text-muted"> A </div> 
+
+					<div class="col text-primary"> A </div>
+					<div class="col text-primary"> A </div>
+					<div class="col text-warning"> <5 </div>
+
+					<div class="col text-warning"> <5 </div>
+					<div class="col text-warning"> 5< </div>
+					<div class="col text-warning"> 5< </div>
+				</div>	</button></div>
+
+		{# marche 2 #}
+			<div class="col"><button type="submit"  formaction="{{ path('marche2') }}" formmethod="get" class="btn btn-outline-primary">marché 2
+				<div class="row row-cols-3"> 
+					<div class="col text-muted"> 3< </div> 
+					<div class="col text-muted"> 3< </div>	
+					<div class="col text-muted"> 3< </div> 
+
+					<div class="col text-primary"> <4 </div>
+					<div class="col text-primary"> A </div>
+					<div class="col text-warning"> <6 </div>
+
+					<div class="col text-warning"> <6 </div>
+					<div class="col text-warning"> 6< </div>
+					<div class="col text-warning"> 6< </div>
+				</div>	</button></div>
+
+		{# marche 3 #}
+			<div class="col"><button type="submit"  formaction="{{ path('marche3') }}" formmethod="get" class="btn btn-outline-primary">marché 3
+				<div class="row row-cols-3"> 
+					<div class="col text-muted"> <4 </div> 
+					<div class="col text-muted"> 4<5 </div>	
+					<div class="col text-muted"> 4<5 </div> 
+
+					<div class="col text-primary"> A </div>
+					<div class="col text-warning"> 3 </div>
+					<div class="col text-warning"> 4 </div>
+
+					<div class="col text-warning"> 5< </div>
+					<div class="col text-warning"> 5< </div>
+					<div class="col text-warning"> 5< </div>
+				</div>	</button></div>
+
+		{# marche 4 #}
+			<div class="col"><button type="submit"  formaction="{{ path('marche4') }}" formmethod="get" class="btn btn-outline-primary">marché 4 	
+				<div class="row row-cols-3"> 
+					<div class="col text-muted"> <4 </div> 
+					<div class="col text-muted"> A </div>	
+					<div class="col text-muted"> A </div> 
+
+					<div class="col text-primary"> <4 </div>
+					<div class="col text-primary"> 4< </div>
+					<div class="col text-primary"> A </div>
+
+					<div class="col text-warning"> <5 </div>
+					<div class="col text-warning"> 5< </div>
+					<div class="col text-warning"> A </div>
+				</div>	</button></div>
+
+		{# marche 5 #}
+			<div class="col"><button type="submit"  formaction="{{ path('marche5') }}" formmethod="get" class="btn btn-outline-primary">marché 5
+				<div class="row row-cols-3"> 
+					<div class="col text-muted"> 2 </div> 
+					<div class="col text-muted"> 3 </div>	
+					<div class="col text-muted"> 4 </div> 
+
+					<div class="col text-muted"> 5 </div>
+					<div class="col text-primary"> A </div>
+					<div class="col text-warning"> 4 </div>
+
+					<div class="col text-warning"> 5 </div>
+					<div class="col text-warning"> 6 </div>
+					<div class="col text-warning"> 6< </div>
+				</div>	</button></div>
+
+		{# marche 6 #}
+			<div class="col"><button type="submit"  formaction="{{ path('marche6') }}" formmethod="get" class="btn btn-outline-primary">marché 6
+				<div class="row row-cols-3"> 
+					<div class="col text-muted"> 3 </div>
+					<div class="col text-muted"> 4 </div>	
+					<div class="col text-primary"> <4 </div> 
+
+					<div class="col text-primary"> 4< </div>
+					<div class="col text-primary"> A </div>
+					<div class="col text-warning"> 3<4 </div>
+
+					<div class="col text-warning"> 5<6 </div>
+					<div class="col text-warning"> 5<6 </div>
+					<div class="col text-warning"> 6< </div>
+				</div>
+			</button></div>
+
+	</div>
+	
+</form> 
+
+
+
+
+    
+
+    <h1> {{marcheType}} </h1>
+    <div class="row row-cols-3">
+
+			{% for reserve in reserves %}
+				<div class="col">
+					<div class="card mx-auto my-2"  style="width: 18rem;">
+											<div class="card-header">
+							{{reserve.nom}}   |   id : {{reserve.id}}
+						</div>
+					
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							cout : {{reserve.cout}}
+						</li>
+						<li class="list-group-item">
+							{{reserve.description}}
+						</li>
+					</ul>
+				</div>
+			</div>
+			{% endfor %}
+		</div> {# fin grid  #}
+
+
+</div> 
+
+{% endblock %}
+

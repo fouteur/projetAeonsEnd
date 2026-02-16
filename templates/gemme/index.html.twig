@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+	<div class="example-wrapper">
+		<h1>
+			tout les Gemmes
+		</h1>
+
+		<div class="grid row row-cols-4 position-static">
+
+			{% for gemme in gemmes %}
+				<div class="card mx-auto my-2"  style="width: 18rem;">
+					<a href="{{ path('gemme.show',{ id:gemme.id})}}">
+						<div class="card-header">
+							{{gemme.nom}} | id : {{gemme.id}}
+						</div>
+					</a>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							cout : {{gemme.cout}}
+						</li>
+						<li class="list-group-item">
+							{{gemme.description}}
+						</li>
+					</ul>
+				</div>
+			{% endfor %}
+		</div> {# fin grid  #}
+
+   
+	
+{% endblock %}

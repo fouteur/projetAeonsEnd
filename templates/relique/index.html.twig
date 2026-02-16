@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+	<div class="example-wrapper">
+		<h1>
+			tout les Reliques
+		</h1>
+
+		<div class="grid row row-cols-4 position-static">
+
+			{% for relique in reliques %}
+				<div class="card mx-auto my-2"  style="width: 18rem;">
+					<a href="{{ path('relique.show',{ id:relique.id})}}">
+						<div class="card-header">
+							{{relique.nom}} | id : {{relique.id}}
+						</div>
+					</a>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							cout : {{relique.cout}}
+						</li>
+						<li class="list-group-item">
+							{{relique.description}}
+						</li>
+					</ul>
+				</div>
+			{% endfor %}
+		</div> {# fin grid  #}
+
+
+{% endblock %}
